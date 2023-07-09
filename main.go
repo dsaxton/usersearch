@@ -77,6 +77,11 @@ func main() {
 		go func(site Site) {
 			defer wg.Done()
 
+			// These sites are prone to false positives
+			if site.Name == "aaha_chat" || site.Name == "ru_123rf" || site.Name == "Salon24" || site.Name == "olx" {
+				return
+			}
+
 			replacedURL := strings.Replace(site.URL, "{account}", *username, 1)
 			client := &http.Client{Timeout: 10 * time.Second}
 			response, err := client.Get(replacedURL)
