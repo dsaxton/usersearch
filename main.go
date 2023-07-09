@@ -91,7 +91,7 @@ func main() {
 			}
 
 			if response.StatusCode == site.ExistsCode && strings.Contains(string(body), site.ExistsString) {
-				fmt.Println("", replacedURL)
+				fmt.Println(replacedURL)
 				mu.Lock()
 				file.WriteString(replacedURL)
 				file.WriteString("\n")
