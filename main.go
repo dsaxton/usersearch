@@ -32,7 +32,7 @@ type Site struct {
 }
 
 const inputData = "https://raw.githubusercontent.com/WebBreacher/WhatsMyName/main/wmn-data.json"
-const usage = "Usage: usersearch -u=<username> -o=<outfile>"
+const usage = "Usage: usersearch -u <username> -o <outfile>"
 
 func main() {
 	username := flag.String("u", "", "Username")
